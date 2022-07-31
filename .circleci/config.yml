@@ -12,10 +12,10 @@ jobs:
     executor: docker-publisher
     steps:
       - checkout
-      - working_directory: /home/mukunth/circleci
+      
       - setup_remote_docker:
          docker_layer_caching: false
-      - run: go test
+      
       - run:
           name: archive the image
           command: docker build -t $IMAGE_NAME:v2 .
